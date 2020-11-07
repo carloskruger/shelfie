@@ -66,7 +66,7 @@ class Form extends Component {
     render(){
         return(
             <div className="productform">
-                <img src={this.state.img} alt="product image" width="150px"/>
+                <img src={this.state.img} alt="product image" width="250px" height="150px"/>
                 <span>Image URL:</span>
                 <input type="text" name="img" value={ this.state.img } onChange={this.handleImageChange} />
                 <span>Product Name:</span>

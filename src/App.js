@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Form from './Components/Form/Form';
@@ -13,29 +13,57 @@ class App extends Component {
     this.state = {
       inventory: []
     }
+
+    this.updateInventory = this.updateInventory.bind(this)
   }
 
   componentDidMount() {
-
-    axios.get(`/api/inventory`)
+console.log("componentDidMount runs")
+    axios.get('/api/inventory')
     .then(res => {
+      console.log("res.data", res.data)
       const inventory = res.data;
       this.setState({ 
         inventory: inventory });
-      })
+      }).catch((err) => {
+        console.log(err);
+      });
   
   }
 
+updateInventory(inventory){
+  this.setState= {
+    inventory: inventory,
+  }
+}
 
 
 
 render(){
+  
+  const testArray = [
+    
+    {
+    "id": 6,
+    "name": "Airplane",
+    "price": 100000,
+    "img": "https://homepages.cae.wisc.edu/~ece533/images/airplane.png"
+    },
+    {
+    "id": 7,
+    "name": "rabbit",
+    "price": 25,
+    "img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png"
+    }
+  
+    ]
+
   return (
     <div className="App">
          <Header/>
          <main>
-      <Dashboard products={ this.state.inventory } />
-      <Form/>
+      <Dashboard products={ testArray } /> 
+      <Form  updInventory={ this.updateInventory }/>
       </main>
    
      
