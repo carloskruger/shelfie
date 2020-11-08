@@ -37,6 +37,19 @@ getInventory(){
 
 }
 
+  deleteProduct(id) {
+   
+    axios.delete('/api/inventory/'+id)
+  //  .then(  res => res.sendStatus(200) )
+  //  .catch( err => {
+  //   res.status(500).send({errorMessage: "couldn't delete the product!"});
+  //   console.log(err)
+  //   });
+
+
+
+    }
+
 
 
 render(){
@@ -47,7 +60,7 @@ render(){
          <Header/>
          <main>
       {/* <Dashboard products={ testArray } />  */}
-      <Dashboard products={ this.state.inventory } getInventory={ this.getInventory} /> 
+      <Dashboard products={ this.state.inventory } deleteProduct={ this.deleteProduct}  getInventory={ this.getInventory }/> 
       <Form  getInventory={ this.getInventory }/>
       </main>
    

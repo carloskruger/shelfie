@@ -38,12 +38,26 @@ main {
 	height: 40px;
 }
 
+.buttonproduct {
+	background-color: #3ad886;
+	height: 40px;
+}
+
 .buttonsarea {
 	width: 80%;
 	margin-top: 30px;
 	display: flex;
 	justify-content: space-between;
 }
+
+.picturearea {
+	width: 50%;
+}
+
+.infoarea {
+	width: 50%;
+}
+
 .productform {
 	margin-top: 100px;
 	display: flex;
