@@ -34,8 +34,8 @@ class Form extends Component {
      .catch((err) => {
        console.log(err);
      });
-   }
-
+  
+ }
 
     handleImageChange( event){
         this.setState({ img: event.target.value})
@@ -58,6 +58,8 @@ class Form extends Component {
         const {name, price, img} = this.state
       
         this.addProduct(name, price, img);
+        this.props.getInventory();
+    
     }
   
     
@@ -66,9 +68,10 @@ class Form extends Component {
     render(){
         return(
             <div className="productform">
-                <img src={this.state.img} alt="product image" width="250px" height="150px"/>
+                <img src={this.state.img} alt="product " width="250px" height="150px"/>
                 <span>Image URL:</span>
-                <input type="text" name="img" value={ this.state.img } onChange={this.handleImageChange} />
+                {/* <input type="text" name="img" value={ this.state.img } onChange={this.handleImageChange} /> */}
+                <input type="text" name="img" value="" onChange={this.handleImageChange} />
                 <span>Product Name:</span>
                 <input type="text" name="name" value={this.state.name} onChange={this.handleNameChange}/>
                 <span>Price:</span>

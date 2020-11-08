@@ -33,7 +33,17 @@ main {
 	justify-content: space-around;
 	font-family: "Open Sans", sans-serif;
 }
+button {
+	background-color: #ed6b5a;
+	height: 40px;
+}
 
+.buttonsarea {
+	width: 80%;
+	margin-top: 30px;
+	display: flex;
+	justify-content: space-between;
+}
 .productform {
 	margin-top: 100px;
 	display: flex;
@@ -54,6 +64,16 @@ main {
 	height: 25vh;
 }
 
+.circle {
+	height: 40px;
+	width: 40px;
+	background-color: white;
+	border-radius: 50%;
+	display: inline-block;
+	padding: 3px;
+	margin-right: 10px;
+}
+
 .header {
 	display: flex;
 	height: 10vh;
@@ -61,6 +81,10 @@ main {
 	color: white;
 	align-items: center;
 	font-size: 26px;
+}
+
+input {
+	width: 80%;
 }
 
 @keyframes App-logo-spin {

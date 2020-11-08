@@ -6,6 +6,7 @@ class Header extends Component {
     render(){
         return(
             <div class="header">
+                <div className="circle"></div>
                 <p> SHELFIE</p>
             </div>
         )

@@ -14,56 +14,57 @@ class App extends Component {
       inventory: []
     }
 
-    this.updateInventory = this.updateInventory.bind(this)
+    this.getInventory = this.getInventory.bind(this)
   }
 
   componentDidMount() {
-console.log("componentDidMount runs")
-    axios.get('/api/inventory')
-    .then(res => {
-      console.log("res.data", res.data)
-      const inventory = res.data;
-      this.setState({ 
-        inventory: inventory });
-      }).catch((err) => {
-        console.log(err);
-      });
+    
+    this.getInventory();
+  
   
   }
 
-updateInventory(inventory){
-  this.setState= {
-    inventory: inventory,
-  }
+getInventory(){
+
+  axios.get('/api/inventory')
+  .then(res => {
+    const inventory = res.data;
+    this.setState({ 
+      inventory: inventory });
+    }).catch((err) => {
+      console.log(err);
+    });
+
 }
 
 
 
 render(){
-  
-  const testArray = [
+  // const { inventory } = this.state.inventory
+  // const testArray = [
     
-    {
-    "id": 6,
-    "name": "Airplane",
-    "price": 100000,
-    "img": "https://homepages.cae.wisc.edu/~ece533/images/airplane.png"
-    },
-    {
-    "id": 7,
-    "name": "rabbit",
-    "price": 25,
-    "img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png"
-    }
+  //   {
+  //   "id": 6,
+  //   "name": "Airplane",
+  //   "price": 100000,
+  //   "img": "https://homepages.cae.wisc.edu/~ece533/images/airplane.png"
+  //   },
+  //   {
+  //   "id": 7,
+  //   "name": "rabbit",
+  //   "price": 25,
+  //   "img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png"
+  //   }
   
-    ]
+  //   ]
 
   return (
     <div className="App">
          <Header/>
          <main>
-      <Dashboard products={ testArray } /> 
-      <Form  updInventory={ this.updateInventory }/>
+      {/* <Dashboard products={ testArray } />  */}
+      <Dashboard products={ this.state.inventory } /> 
+      <Form  getInventory={ this.getInventory }/>
       </main>
    
      
