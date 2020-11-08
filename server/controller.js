@@ -13,16 +13,27 @@ module.exports = {
     getProducts: (req, res) => {
 
         const dbInstance = req.app.get('db');
-        console.log(dbInstance);
         dbInstance.get_inventory()
         .then(products => res.status(200).send( products ))
         .catch(err => {res.status(500).send({errorMessage: "server problems"});
         console.log(err)
-    })
+    });
+},
+
+    deleteProduct: (req, res) => {
+        const dbInstance = req.app.get('db');
+        const { id } = req.params;
+        dbInstance.delete_product(id)
+        .then(() => res.sendStatus(200))
+        .catch(err => {res.status(500).send({errorMessage: "Could not delete the product"});
+      console.log(err)     
+
+    });
+}
+}
         
-    }
+    
 
     
 
 
-}

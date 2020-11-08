@@ -40,30 +40,14 @@ getInventory(){
 
 
 render(){
-  // const { inventory } = this.state.inventory
-  // const testArray = [
-    
-  //   {
-  //   "id": 6,
-  //   "name": "Airplane",
-  //   "price": 100000,
-  //   "img": "https://homepages.cae.wisc.edu/~ece533/images/airplane.png"
-  //   },
-  //   {
-  //   "id": 7,
-  //   "name": "rabbit",
-  //   "price": 25,
-  //   "img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png"
-  //   }
-  
-  //   ]
+
 
   return (
     <div className="App">
          <Header/>
          <main>
       {/* <Dashboard products={ testArray } />  */}
-      <Dashboard products={ this.state.inventory } /> 
+      <Dashboard products={ this.state.inventory } getInventory={ this.getInventory} /> 
       <Form  getInventory={ this.getInventory }/>
       </main>
    

@@ -15,6 +15,7 @@ class Form extends Component {
         this.handlePriceChange = this.handlePriceChange.bind(this);
         this.addProduct = this.addProduct.bind(this);
         this.handleAddToProducts = this.handleAddToProducts.bind(this);
+        this.handleClear = this.handleClear.bind(this);
     }
 
 
@@ -35,6 +36,16 @@ class Form extends Component {
        console.log(err);
      });
   
+ }
+
+ handleClear(){
+
+    this.setState({ 
+        name: '',
+        price: 0,
+        img: 'https://homepages.cae.wisc.edu/~ece533/images/airplane.png'
+     })
+
  }
 
     handleImageChange( event){
@@ -77,7 +88,7 @@ class Form extends Component {
                 <span>Price:</span>
                 <input type="price" name="price" value={this.state.price} onChange={this.handlePriceChange}/>
                 <div class="buttonsarea">
-                <button>Cancel</button> <button onClick={this.handleAddToProducts}> Add to Inventory</button>
+                <button className="buttonform" onClick={this.handleClear}>Cancel</button> <button className="buttonform" onClick={this.handleAddToProducts}> Add to Inventory</button>
                 </div>
             </div>
         )

@@ -33,7 +33,7 @@ main {
 	justify-content: space-around;
 	font-family: "Open Sans", sans-serif;
 }
-button {
+.buttonform {
 	background-color: #ed6b5a;
 	height: 40px;
 }

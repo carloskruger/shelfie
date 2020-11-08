@@ -26,4 +26,6 @@ app.post('/api/product', ctrl.create);
 
 app.get('/api/inventory', ctrl.getProducts);
 
+app.delete('/api/inventory/:id', ctrl.deleteProduct);
+
 app.listen(SERVER_PORT, () => console.log(`Server is listening on port ${SERVER_PORT}`));

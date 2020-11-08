@@ -14,6 +14,10 @@ console.log("props: ",this.props)
                 <div>
                     <p>{this.props.name}</p>
                     <p>${this.props.price}</p>
+                    <div>
+                        <button>Delete</button>
+                        <button>Edit</button>
+                    </div>
                 </div>
                 </div>
             </div>
